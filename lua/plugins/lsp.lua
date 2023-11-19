@@ -1,0 +1,34 @@
+return {
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      autoformat = false,
+      servers = {
+        rust_analyzer = {
+          settings = {
+            ["rust-analyzer"] = {
+              checkOnSave = {
+                command = "clippy",
+              }
+            }
+          }
+        }
+      },
+      taplo = {
+        keys = {
+          {
+            "K",
+            function()
+              if vim.fn.expand("%:t") == "Cargo.toml" and require("crates").popup_available() then
+                require("crates").show_popup()
+              else
+                vim.lsp.buf.hover()
+              end
+            end,
+            desc = "Show Crate Documentation",
+          },
+        },
+      },
+    },
+  },
+}
