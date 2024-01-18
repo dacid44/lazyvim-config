@@ -5,3 +5,7 @@
 local map = vim.keymap.set
 
 map("i", "<C-z>", "<cmd>undo<cr>", { desc = "undo" })
+
+if vim.g.neovide == true then
+  require("config/neovide").keymaps()
+end

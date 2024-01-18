@@ -3,3 +3,7 @@
 -- Add any additional options here
 
 vim.g.autoformat = false
+
+if vim.g.neovide == true then
+  require("config/neovide").options()
+end
