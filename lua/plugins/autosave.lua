@@ -13,7 +13,7 @@ return {
       local utils = require("auto-save.utils.data")
 
       -- don't save for notebook file types
-      if utils.not_in(fn.getbufvar(buf, "&filetype"), { "notebook", "ipynb", "quarto", "qmd" }) then
+      if utils.not_in(fn.getbufvar(buf, "&filetype"), { "notebook", "ipynb", "quarto", "qmd" }) and utils.not_in(fn.expand('%:e'), { "ipynb" }) then
         return true
       end
       return false
