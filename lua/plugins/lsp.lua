@@ -11,7 +11,12 @@ return {
               }
             },
           }
-        }
+        },
+        clangd = {
+          capabilities = {
+            offsetEncoding = "utf-8",
+          },
+        },
       },
       taplo = {
         keys = {
