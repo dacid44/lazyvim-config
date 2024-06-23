@@ -20,6 +20,12 @@ local maybe_init_image_nvim = function()
         hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp" }, -- render image files as images when opened
       },
       version = "1.1.0",
+    }, {
+      "vhyrro/luarocks.nvim",
+      priority = 1001, -- this plugin needs to run before anything else
+      opts = {
+        rocks = { "magick" },
+      },
     }
   end
 end
